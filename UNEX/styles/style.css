@@ -1,0 +1,371 @@
+/* шрифты */
+@font-face { font-family: Roboto-Thin; src: url('../props/fonts/Roboto-Thin.ttf'); }
+@font-face { font-family: Roboto-Regular; src: url('../props/fonts/Roboto-Regular.ttf'); }
+@font-face { font-family: Roboto-Medium; src: url('../props/fonts/Roboto-Medium.ttf'); }
+@font-face { font-family: Roboto-Bold; src: url('../props/fonts/Roboto-Bold.ttf'); }
+
+/*                   */
+/* важные переменные */
+/*                   */
+:root {  
+	--header-color: rgb(255, 255, 100); /* the default */
+	--footer-color: rgb(18, 18, 18); /* the default */
+	--background-color: #ffffff;
+	--text-color: #ffffcc;
+}
+
+/* изменение стиля прокрутки */
+::-webkit-scrollbar {
+	width: 0.5vw;
+}
+::-webkit-scrollbar-track {
+	background: var(--footer-color);
+	border-left: 0.1vw solid black;
+} 
+::-webkit-scrollbar-thumb {
+	background: var(--header-color); 
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(255, 205, 50); 
+}
+html {
+}
+
+/* изменение стандартного цвета, стиля и курсора ссылки */
+a {
+	cursor: url(../props/rock.cur), auto;
+	text-decoration: none;
+	color: #7F11AA;
+}
+main a:hover {
+	text-decoration: underline;
+}
+
+/* изменения стандартного стиля тела страницы */
+body {
+	margin: 0;
+	background-image: url("../images/background.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-family: Roboto-Regular;
+}
+
+
+
+/*                                      */
+/*                                      */
+/* желтая липкая верхняя часть страницы */
+/*                                      */
+/*                                      */
+header {
+	position: sticky;
+	display: block;
+	top: 0;
+	user-select: none;
+}
+
+#head {
+	position: relative;
+	height: 4vw;
+	background-color: var(--header-color);
+	z-index: 3;
+}
+
+/* текст как логотип */
+#logo {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	color: var(--footer-color);
+	font-size: 3vw;
+	font-family: Roboto-Thin;
+	line-height: 4vw;
+	text-align: center;
+}
+
+/* отдельный стиль полей и формы */
+#username {
+}
+#password {
+}
+#form {
+	display: inline;
+	grid-area: form;
+	margin: 0;
+}
+
+/* стиль текстовых полей */
+.text_forms{
+	resize: none;
+	height: 1.5vw;
+	width: 10vw;
+	margin: 0.1vw;
+	border-radius: 2em;
+	outline: none;
+	font-size: 1vw;
+	overflow: hidden;
+	border: 0.05vw solid grey;
+	padding-left: 0.5vw;
+	padding-right: 0.5vw;
+}
+
+/* кнопки логина */
+#loginb {
+	grid-area: loginb;
+	text-align: left;
+	color: var(--footer-color);
+	font-size: 1.5vw;
+}
+#registerb {
+	grid-area: registerb;
+	text-align: left;
+	color: var(--footer-color);
+	font-size: 1.5vw;
+}
+
+/* вся форма логина в grid */
+#login_form {
+	position: absolute;
+	right: 1vw;
+	display: grid;
+	grid-template-areas:
+		'form loginb'
+		'form registerb';
+	grid-column-gap: 0;
+	grid-template-columns: 10.2vw 7vw;
+	grid-template-rows: 1.7vw 1.5vw;
+	height: 4vw;
+	padding: 0.35vw 1vw 0 0;
+}
+
+/* черная навигационная панель */
+#nav_bar {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	font-family: Roboto-Thin;
+	height: 2vw;
+	line-height: 2vw;
+	background-color: var(--footer-color);
+	z-index: 2;
+}
+#nav_bar * {
+	color: white;
+	font-size: 1.5vw;
+}
+#nav_bar a {
+	width: 24.5vw;
+	text-align: center;
+}
+#nav_bar a:hover {
+	background-color: rgb(72, 72, 72);	
+}
+
+/* выпадающее меню */
+#list_menu {
+	position: absolute;
+	top: -2vw;
+	left: 50.275vw;
+	display: flex;
+	flex-direction: column;
+	font-family: Roboto-Thin;
+	width: 24.5vw;
+	line-height: 2vw;
+	background-color: rgb(38, 38, 38);
+}
+#list_menu * {
+	font-size: 1.5vw;
+	width: 24.5vw;
+	color: white;
+	text-align: center;
+}
+#list_menu *:hover {
+	background-color: rgb(72, 72, 72);
+}
+
+/* подсветка снизу нав. панели текущей страницы */
+#current {
+	border-bottom: 0.1vw solid #FF3333;
+	animation: rainbow 1s infinite;
+}
+/* анимация радуги */
+@keyframes rainbow {
+  0% {
+    border-bottom: 0.1vw solid #FF3333;
+  }
+  8% {
+    border-bottom: 0.1vw solid #FF9933;
+  }
+  16% {
+    border-bottom: 0.1vw solid #FFFF33;
+  }
+  24% {
+    border-bottom: 0.1vw solid #99FF33;
+  }
+  32% {
+    border-bottom: 0.1vw solid #33FF33;
+  }
+  40% {
+    border-bottom: 0.1vw solid #33FF99;
+  }
+  48% {
+    border-bottom: 0.1vw solid #33FFFF;
+  }
+  56% {
+    border-bottom: 0.1vw solid #3399FF;
+  }
+  64% {
+    border-bottom: 0.1vw solid #3333FF;
+  }
+  72% {
+    border-bottom: 0.1vw solid #9933FF;
+  }
+  80% {
+    border-bottom: 0.1vw solid #FF33FF;
+  }
+  88% {
+    border-bottom: 0.1vw solid #FF3399;
+  }
+  100% {
+    border-bottom: 0.1vw solid #FF3333;
+  }
+}
+
+
+/* все, что не оглавление будет занимать оставшуюся часть страницы */
+#content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100vh - 6vw);
+	overflow: auto;
+}
+
+
+
+/*                        */
+/*                        */
+/* главная часть страницы */
+/*                        */
+/*                        */
+main {
+	padding: 20px 200px 20px 200px;
+	color: var(--footer-color);
+	background-color: var(--background-color);
+	margin-left: auto;
+	margin-right: auto;
+	width: calc(1720px - 400px);
+	height: 10000px;
+	font-size: 2em;
+}
+
+
+
+/*                              */
+/*                              */
+/* черная нижняя часть страницы */
+/*                              */
+/*                              */
+footer {
+	display: flex;
+	background-color: var(--footer-color);
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1560px;
+	font-size: 20px;
+	padding: 40px 80px 40px 80px;
+}
+
+/* текст справа/слева в footer */
+#lorem { 
+	grid-area: lorem;
+}
+#ipsum { 
+	grid-area: ipsum;
+}
+
+/* кнопки соц. сетей */
+#social { 
+	grid-area: social;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 0 650px 0 650px;
+}
+#social svg {
+	fill: var(--header-color);
+	width: 60px;
+	height: 60px;
+}
+#social a {
+	fill: var(--header-color);
+	text-align: center;
+	width: 100px;
+}
+#footer_grid{
+	display: grid;
+	grid-template-areas:
+		'lorem ipsum'
+		'social social';
+	grid-template-columns: 770px 770px;
+	width: 1540px;
+	grid-gap: 40px;
+}
+
+/* регулировка яркости сайта */
+#night-mode{
+	display: block;
+	position: fixed;
+	background-color: black;
+	opacity: 0;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+#night-mode-image{
+	display: block;
+	position: fixed;
+	background-image: url("../images/background.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	z-index: 101;
+}
+#brightness-control {
+	position: absolute;
+	-webkit-appearance: none;
+	background: white;
+	outline: none;
+	opacity: 0.7;
+	border-radius: 1em;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	height: 3vw;
+	width: 8vw;
+	margin: 0.5vw;
+	z-index: 102;
+}
+#brightness-control:hover {
+	opacity: 1;
+}
+#brightness-control::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-image: url("../images/mode-bulb.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 2vw;
+	height: 100%;
+	border: 10;
+}

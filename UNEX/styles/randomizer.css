@@ -1,0 +1,60 @@
+/* стиль блока рандомизатора */
+#randomizer {
+	padding: 100px 0 400px 0;
+}
+/* стиль всего, кроме кнопки и нинзи */
+#randomizer *:not(button):not(#ninja) {
+	text-shadow: 2px 2px 4px #999;
+	text-align: center;
+	font-size: 68px;
+	margin: auto;
+	color: #333;
+	line-height: 60px;
+}
+/* невидимый изначально блок */
+#ninja {
+	display: block;
+	text-align: center;
+	color: #959595;
+	font-size: 30px;
+}
+
+/* кнопка */
+button {
+	padding: 15px 25px;
+	margin-top: 10px;
+	font-size: 60px;
+	cursor: url(../props/rock.cur), auto;
+	color: #333;
+	background-color: var(--header-color);
+	border: none;
+	box-shadow:
+		1px 0px 1px #C1C11B, 0px 1px 1px #FFFFB3, 
+		2px 1px 1px #C1C11B, 1px 2px 1px #FFFFB3, 
+		3px 2px 1px #C1C11B, 2px 3px 1px #FFFFB3,
+		4px 3px 1px #C1C11B, 3px 4px 1px #FFFFB3, 
+		5px 4px 1px #C1C11B, 4px 5px 1px #FFFFB3, 
+		6px 5px 1px #C1C11B, 5px 6px 1px #FFFFB3, 
+		7px 6px 1px #C1C11B, 6px 7px 1px #FFFFB3, 
+		8px 7px 1px #C1C11B, 7px 8px 1px #FFFFB3, 
+		9px 8px 1px #C1C11B, 8px 9px 1px #FFFFB3, 
+		10px 9px 1px #C1C11B, 9px 10px 1px #FFFFB3, 
+		11px 10px 1px #C1C11B;
+	outline: none;
+	user-select: none;
+}
+button:hover {
+	background-color: #FFFF43;
+}
+button:active {
+	background-color: #FFFF43;
+	box-shadow:
+		1px 0px 1px #C1C11B, 0px 1px 1px #FFFFB3, 
+		2px 1px 1px #C1C11B, 1px 2px 1px #FFFFB3, 
+		3px 2px 1px #C1C11B, 2px 3px 1px #FFFFB3,
+		4px 3px 1px #C1C11B, 3px 4px 1px #FFFFB3, 
+		5px 4px 1px #C1C11B, 4px 5px 1px #FFFFB3, 
+		6px 5px 1px #C1C11B, 5px 6px 1px #FFFFB3, 
+		7px 6px 1px #C1C11B;
+	transform: translateY(4px) translateX(4px) ;
+}

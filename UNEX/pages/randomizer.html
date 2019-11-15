@@ -1,0 +1,51 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		<title>UNEX</title>
+		<!-- стили -->
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+		<link rel="stylesheet" type="text/css" href="../styles/randomizer.css">
+		<!-- звук -->
+		<audio id="press" preload>
+			<source src="../props/sounds/press.mp3" type="audio/mpeg">
+			<source src="../props/sounds/press.ogg" type="audio/ogg">
+		</audio>
+		<audio id="release" preload>
+			<source src="../props/sounds/release.mp3" type="audio/mpeg">
+			<source src="../props/sounds/release.ogg" type="audio/ogg">
+		</audio>
+		<script type="text/javascript" src="../scripts/sound.js"></script>
+		<!-- выпадающее меню -->
+		<script type="text/javascript" src="../scripts/dropdown.js"></script>
+		<!-- логин система -->
+		<script type="text/javascript" src="../scripts/login.js"></script>
+		<!-- система рандомайзера -->
+		<script type="text/javascript" src="../scripts/randomizer.js"></script>
+		<!-- изменение яркости -->
+		<script type="text/javascript" src="../scripts/brightness.js"></script>
+	</head>
+
+	<body>
+		<!-- header скриптом, чтобы не повторять в каждом файле -->
+		<script src="../includes/header.js"></script>
+		<script type="text/javascript">
+			document.querySelector("a[href='randomizer.html']").setAttribute("id", "current");
+		</script>
+
+ 		<main>
+ 			<!-- блок рандомайзера -->
+			<div id="randomizer">
+				<p> ROSES ARE RED </p>
+				<p> MEMES ARE NEAT </p>
+				<p> I WANT TO DIE </p>
+				<!-- кнопка вызывает открытие случайной страницы и звук -->
+				<p><button onclick="getRandomPage()" onmousedown="PlaySound('press');" onmouseup="PlaySound('release')">LMAO YEET</button></p>
+				<!-- нинзя пустой пока пользователь не прошелся по всем сайтам -->
+				<p id="ninja"></p>
+			</div>
+		</main>
+		
+		<!-- footer скриптом, чтобы не повторять в каждом файле -->
+		<script src="../includes/footer.js"></script>
+	</body>
+</html>

@@ -1,3 +1,14 @@
+// ninja text
+window.onload = window.onload.extend(function(){
+	console.log("onload complete");
+  if(!sessionStorage.ninjaValue){
+		getData(sessionStorage.randomizerValue);
+	}
+	else{
+		document.querySelector("#ninja").innerHTML = sessionStorage.ninjaValue;
+	}
+})
+
 // не очень полезные сайты
 var listUseless=[
 	"http://heeeeeeeey.com",
@@ -81,10 +92,48 @@ var listUseful=[
 	"https://everytimezone.com",
 	"https://www.flightradar24.com"];
 // пользовательские сайты
-var listUser=[];
+var listUser=[
+	"https://scrollbars.matoseb.com"
+];
 // все вместе
 var list=listUseless.concat(listUseful.concat(listUser));
-var n=0;
+var n0="All";
+var n1=0;
+var n2=0;
+var n3=list.length
+
+function getData(num){
+	let i = Math.floor(num/25);
+	console.log("current slider stage: "+i);
+	var data=JSON.parse(sessionStorage.randomizerList);
+	if(data[i][0]==n0){
+		data[i][0]=n0;data[i][1]=n1;data[i][2]=n2;
+	}
+	data[i][3]=n3;
+	n0=data[i][0];n1=data[i][1];n2=data[i][2];
+	console.log("current data array: "+data[i]);
+	document.getElementById("ninja").innerHTML = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
+	sessionStorage.ninjaValue = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
+	sessionStorage.randomizerList = JSON.stringify(data);
+}
+
+function changeList(i){
+	sessionStorage.randomizerValue = i;
+	if (i < 25){
+		list=listUseless.concat(listUseful.concat(listUser));
+	}
+	else if (i < 50) {
+		list=listUseless.concat();
+	}
+	else if (i < 75) {
+		list=listUseful.concat();
+	}
+	else if (i < 100) {
+		list=listUser.concat();
+	}
+	n3=list.length;
+	getData(i);
+}
 
 // случайное целое число из диапазона
 function getRndInt(min, max) {
@@ -92,33 +141,19 @@ function getRndInt(min, max) {
 }
 
 function getRandomPage(){
+	n1+=1;
 	var index=getRndInt(0, list.length); // индекс сайта
-	var item=list[index]; // сайт по индексу из общего списка
-	var win=window.open(item, '_blank'); // открытие сайта в новой вкладке
-	win.focus(); // в рабочем окне
-	list.splice(index, 1); // удаление элемента из списка по индексу
+	if (list.length != 0){
+		var item=list[index]; // сайт по индексу из общего списка
+		var win=window.open(item, '_blank'); // открытие сайта в новой вкладке
+		win.focus(); // в рабочем окне
+		list.splice(index, 1); // удаление элемента из списка по индексу
+	}
 
 	// если список закончился
 	if (list.length == 0){
-		n+=1; // количество прохождений всех сайтов
-		list=listUseless.concat(listUseful.concat(listUser)); // генерируется новый ,такой же, список
-
-		// текст для психов, которые захотят потратить свое время 
-		// на открытие всех сайтов по 200 раз
-		if (n==1) {
-			document.getElementById("ninja").innerHTML = "You've cycled through all pages "+n+" time";
-		}
-		else if (n<=3) {
-			document.getElementById("ninja").innerHTML = "You've cycled through all pages "+n+" times";
-		}
-		else {
-			document.getElementById("ninja").innerHTML = `
-	<video width="530" height="300" autoplay controls>
-		<source src="../images/stop.mp4" type="video/mp4">
-		<source src="../images/stop.ogg" type="video/ogg">
-	Your browser does not support the video tag.
-	</video><br>
-	WTF MAN?!?!? YOU'VE CYCLED THROUGH ALL PAGES `+n+` TIMES`;
-		}
+		n2+=1; // количество прохождений всех сайтов
+		changeList(sessionStorage.randomizerValue); // генерируется новый ,такой же, список
 	}
+	getData(sessionStorage.randomizerValue);
 }

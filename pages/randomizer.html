@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>UNEX</title>
+
 		<!-- стили -->
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
 		<link rel="stylesheet" type="text/css" href="../styles/randomizer.css">
@@ -14,6 +15,10 @@
 			<source src="../props/sounds/release.mp3" type="audio/mpeg">
 			<source src="../props/sounds/release.ogg" type="audio/ogg">
 		</audio>
+		<!-- скрипты -->
+		<!-- onload -->
+		<script type="text/javascript" src="../scripts/onloads.js"></script>
+		<!-- звук -->
 		<script type="text/javascript" src="../scripts/sound.js"></script>
 		<!-- выпадающее меню -->
 		<script type="text/javascript" src="../scripts/dropdown.js"></script>
@@ -35,16 +40,29 @@
  		<main>
  			<!-- блок рандомайзера -->
 			<div id="randomizer">
-				<p> ROSES ARE RED </p>
-				<p> MEMES ARE NEAT </p>
-				<p> I WANT TO DIE </p>
-				<!-- кнопка вызывает открытие случайной страницы и звук -->
-				<p><button onclick="getRandomPage()" onmousedown="PlaySound('press');" onmouseup="PlaySound('release')">LMAO YEET</button></p>
+				<div id="randomizer_base">
+					<p id="randomizer-1"> ROSES ARE RED </p>
+					<p id="randomizer-2"> MEMES ARE NEAT </p>
+					<p id="randomizer-3"> I WANT TO DIE </p>
+					<!-- кнопка вызывает открытие случайной страницы и звук -->
+					<p><button id="randomizer_button" onclick="getRandomPage()" onmousedown="PlaySound('press');" onmouseup="PlaySound('release')">LMAO YEET</button></p>
+				</div>
+
+				<div id="randomizer_choose">
+					<datalist id="tickmarks">
+						<option>ALL</option>
+						<option>USELESS</option>
+						<option>USEFUL</option>
+						<option>USER</option>
+					</datalist>
+					<input type="range" min="0" max="99" value="0" id="randomizer_range" list="tickmarks" oninput="changeList(value)">
+				</div>
+
 				<!-- нинзя пустой пока пользователь не прошелся по всем сайтам -->
 				<p id="ninja"></p>
 			</div>
 		</main>
-		
+
 		<!-- footer скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/footer.js"></script>
 	</body>

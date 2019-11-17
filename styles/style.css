@@ -7,8 +7,8 @@
 /*                   */
 /* важные переменные */
 /*                   */
-:root {  
-	--header-color: rgb(255, 255, 100); /* the default */
+:root {
+	--header-color: rgb(255, 255, 100); /* the default #FFFF64 */
 	--footer-color: rgb(18, 18, 18); /* the default */
 	--background-color: #ffffff;
 	--text-color: #ffffcc;
@@ -16,17 +16,17 @@
 
 /* изменение стиля прокрутки */
 ::-webkit-scrollbar {
-	width: 0.5vw;
+	width: auto;
 }
 ::-webkit-scrollbar-track {
 	background: var(--footer-color);
 	border-left: 0.1vw solid black;
-} 
+}
 ::-webkit-scrollbar-thumb {
-	background: var(--header-color); 
+	background: var(--header-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: rgb(255, 205, 50); 
+	background: rgb(255, 205, 50);
 }
 html {
 }
@@ -39,6 +39,10 @@ a {
 }
 main a:hover {
 	text-decoration: underline;
+}
+.responsive-image{
+	max-width: 100%;
+	height: auto;
 }
 
 /* изменения стандартного стиля тела страницы */
@@ -85,6 +89,36 @@ header {
 	font-family: Roboto-Thin;
 	line-height: 4vw;
 	text-align: center;
+}
+
+/* регулировка яркости сайта */
+#brightness-control {
+	cursor: e-resize;
+	position: absolute;
+	-webkit-appearance: none;
+	background: white;
+	outline: none;
+	opacity: 0.7;
+	border-radius: 1em;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+	height: 3vw;
+	width: 8vw;
+	margin: 0.5vw;
+	z-index: 102;
+}
+#brightness-control:hover {
+	opacity: 1;
+}
+#brightness-control::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background-image: url("../images/mode-bulb.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 2vw;
+	height: 100%;
+	border: 10;
 }
 
 /* отдельный стиль полей и формы */
@@ -163,7 +197,7 @@ header {
 	text-align: center;
 }
 #nav_bar a:hover {
-	background-color: rgb(72, 72, 72);	
+	background-color: rgb(72, 72, 72);
 }
 
 /* выпадающее меню */
@@ -254,14 +288,15 @@ header {
 /*                        */
 /*                        */
 main {
-	padding: 20px 200px 20px 200px;
 	color: var(--footer-color);
 	background-color: var(--background-color);
-	margin-left: auto;
-	margin-right: auto;
-	width: calc(1720px - 400px);
+	align-self: center;
+	box-sizing: border-box;
+	max-width: 1620px;
+	width: calc(100% - 15vw);
 	height: 10000px;
-	font-size: 2em;
+	font-size: 1.5em;
+	padding: 1vw 5vw 1vw 5vw;
 }
 
 
@@ -275,28 +310,31 @@ footer {
 	display: flex;
 	background-color: var(--footer-color);
 	color: white;
-	margin-left: auto;
-	margin-right: auto;
-	width: 1560px;
-	font-size: 20px;
-	padding: 40px 80px 40px 80px;
+	align-self: center;
+	box-sizing: border-box;
+	max-width: 1720px;
+	width: calc(100% - 10vw);
+	font-size: 1em;
+	padding: 20px 50px 20px 50px;
 }
 
 /* текст справа/слева в footer */
-#lorem { 
+#lorem {
 	grid-area: lorem;
 }
-#ipsum { 
+#ipsum {
 	grid-area: ipsum;
 }
 
 /* кнопки соц. сетей */
-#social { 
+#social {
 	grid-area: social;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 300px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	padding: 0 650px 0 650px;
 }
 #social svg {
 	fill: var(--header-color);
@@ -310,15 +348,18 @@ footer {
 }
 #footer_grid{
 	display: grid;
+	margin-left: auto;
+	margin-right: auto;
 	grid-template-areas:
 		'lorem ipsum'
 		'social social';
-	grid-template-columns: 770px 770px;
-	width: 1540px;
-	grid-gap: 40px;
+	grid-template-columns: calc(50% - 1vw) calc(50% - 1vw);
+	max-width: 1540px;
+	width: 100%;
+	grid-gap: 2vw;
 }
 
-/* регулировка яркости сайта */
+/* блок яркости сайта */
 #night-mode{
 	display: block;
 	position: fixed;
@@ -341,31 +382,4 @@ footer {
 	width: 100%;
 	height: 100%;
 	z-index: 101;
-}
-#brightness-control {
-	position: absolute;
-	-webkit-appearance: none;
-	background: white;
-	outline: none;
-	opacity: 0.7;
-	border-radius: 1em;
-	-webkit-transition: .2s;
-	transition: opacity .2s;
-	height: 3vw;
-	width: 8vw;
-	margin: 0.5vw;
-	z-index: 102;
-}
-#brightness-control:hover {
-	opacity: 1;
-}
-#brightness-control::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	background-image: url("../images/mode-bulb.png");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	width: 2vw;
-	height: 100%;
-	border: 10;
 }

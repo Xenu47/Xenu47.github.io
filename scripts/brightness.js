@@ -1,13 +1,3 @@
-window.onload = function(){
-	if(!sessionStorage .brightness){
-		sessionStorage .brightness = 100;
-	}
-	else{
-		document.querySelector("#brightness-control").value = sessionStorage .brightness;
-		document.querySelector("#night-mode").style.setProperty("opacity", (1 - sessionStorage .brightness/100));
-	}
-}
-
 function changeBrightness(){
 	sessionStorage .brightness = document.querySelector("#brightness-control").value;
 	var newval = ((25-sessionStorage .brightness)*0.04);

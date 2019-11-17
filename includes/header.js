@@ -9,7 +9,7 @@ document.write(`
 						<input type="login" name="unexlogin" id="username" placeholder="Username" class="text_forms">
 						<input type="password" name="unexpassword" id="password" placeholder="Password" class="text_forms">
 					</form>
-					<a onclick="auth()" id="loginb">LOGIN</a>
+					<a href="#" onclick="auth()" id="loginb">LOGIN</a>
 					<a href="#" id="registerb">REGISTER</a>
 				</div>
 			</div>

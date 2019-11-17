@@ -11,10 +11,10 @@ function mouseOver() {
 	}
 	// статус "в движении", тогда при повторном нажатии он не прекратит работу
 	document.getElementById("inv_val").innerHTML = "1";
-	
+
 	var start = Date.now(); // время начала
 	var timer = setInterval(function() {
-		var timePassed = Date.now() - start; // количество пройденного времени 
+		var timePassed = Date.now() - start; // количество пройденного времени
 		// если оно больше чем нужно - присваивается новый статус
 		if (timePassed >= 210) {
 			if(step == 0.4){

@@ -61,6 +61,7 @@
 
 /* слайдер выбора списка для рандомийзера */
 #randomizer_choose {
+	font-size: 30px;
 	width: 600px;
 	padding-top: 60px;
 	margin: auto;

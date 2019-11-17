@@ -47,6 +47,7 @@ main a:hover {
 
 /* изменения стандартного стиля тела страницы */
 body {
+	overflow: hidden;
 	margin: 0;
 	background-image: url("../images/background.png");
 	background-position: center;
@@ -74,7 +75,7 @@ header {
 
 #head {
 	position: relative;
-	height: 4vw;
+	height: 8vh;
 	background-color: var(--header-color);
 	z-index: 3;
 }
@@ -85,9 +86,9 @@ header {
 	left: 50%;
 	transform: translateX(-50%);
 	color: var(--footer-color);
-	font-size: 3vw;
+	font-size: 6vh;
 	font-family: Roboto-Thin;
-	line-height: 4vw;
+	line-height: 8vh;
 	text-align: center;
 }
 
@@ -102,9 +103,10 @@ header {
 	border-radius: 1em;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
-	height: 3vw;
+	height: 6vh;
 	width: 8vw;
-	margin: 0.5vw;
+	margin-top: 1vh;
+	margin-left: 0.5vw;
 	z-index: 102;
 }
 #brightness-control:hover {
@@ -116,9 +118,8 @@ header {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: 50%;
-	width: 2vw;
-	height: 100%;
-	border: 10;
+	width: 4vh;
+	height: 4vh;
 }
 
 /* отдельный стиль полей и формы */
@@ -135,14 +136,14 @@ header {
 /* стиль текстовых полей */
 .text_forms{
 	resize: none;
-	height: 1.5vw;
+	height: 3vh;
 	width: 10vw;
 	margin: 0.1vw;
 	border-radius: 2em;
 	outline: none;
-	font-size: 1vw;
+	font-size: 2vh;
 	overflow: hidden;
-	border: 0.05vw solid grey;
+	border: 1px solid grey;
 	padding-left: 0.5vw;
 	padding-right: 0.5vw;
 }
@@ -152,13 +153,13 @@ header {
 	grid-area: loginb;
 	text-align: left;
 	color: var(--footer-color);
-	font-size: 1.5vw;
+	font-size: 3vh;
 }
 #registerb {
 	grid-area: registerb;
 	text-align: left;
 	color: var(--footer-color);
-	font-size: 1.5vw;
+	font-size: 3vh;
 }
 
 /* вся форма логина в grid */
@@ -171,9 +172,9 @@ header {
 		'form registerb';
 	grid-column-gap: 0;
 	grid-template-columns: 10.2vw 7vw;
-	grid-template-rows: 1.7vw 1.5vw;
-	height: 4vw;
-	padding: 0.35vw 1vw 0 0;
+	grid-template-rows: 3.4vh 3vh;
+	height: 8vh;
+	padding: 0.7vh 1vw 0 0;
 }
 
 /* черная навигационная панель */
@@ -183,14 +184,14 @@ header {
 	flex-direction: row;
 	justify-content: space-around;
 	font-family: Roboto-Thin;
-	height: 2vw;
-	line-height: 2vw;
+	height: 4vh;
+	line-height: 4vh;
 	background-color: var(--footer-color);
 	z-index: 2;
 }
 #nav_bar * {
 	color: white;
-	font-size: 1.5vw;
+	font-size: 3vh;
 }
 #nav_bar a {
 	width: 24.5vw;
@@ -203,17 +204,17 @@ header {
 /* выпадающее меню */
 #list_menu {
 	position: absolute;
-	top: -2vw;
+	top: -4vh;
 	left: 50.275vw;
 	display: flex;
 	flex-direction: column;
 	font-family: Roboto-Thin;
 	width: 24.5vw;
-	line-height: 2vw;
+	line-height: 4vh;
 	background-color: rgb(38, 38, 38);
 }
 #list_menu * {
-	font-size: 1.5vw;
+	font-size: 3vh;
 	width: 24.5vw;
 	color: white;
 	text-align: center;
@@ -224,49 +225,49 @@ header {
 
 /* подсветка снизу нав. панели текущей страницы */
 #current {
-	border-bottom: 0.1vw solid #FF3333;
+	border-bottom: 1px solid #FF3333;
 	animation: rainbow 1s infinite;
 }
 /* анимация радуги */
 @keyframes rainbow {
   0% {
-    border-bottom: 0.1vw solid #FF3333;
+    border-bottom: 1px solid #FF3333;
   }
   8% {
-    border-bottom: 0.1vw solid #FF9933;
+    border-bottom: 1px solid #FF9933;
   }
   16% {
-    border-bottom: 0.1vw solid #FFFF33;
+    border-bottom: 1px solid #FFFF33;
   }
   24% {
-    border-bottom: 0.1vw solid #99FF33;
+    border-bottom: 1px solid #99FF33;
   }
   32% {
-    border-bottom: 0.1vw solid #33FF33;
+    border-bottom: 1px solid #33FF33;
   }
   40% {
-    border-bottom: 0.1vw solid #33FF99;
+    border-bottom: 1px solid #33FF99;
   }
   48% {
-    border-bottom: 0.1vw solid #33FFFF;
+    border-bottom: 1px solid #33FFFF;
   }
   56% {
-    border-bottom: 0.1vw solid #3399FF;
+    border-bottom: 1px solid #3399FF;
   }
   64% {
-    border-bottom: 0.1vw solid #3333FF;
+    border-bottom: 1px solid #3333FF;
   }
   72% {
-    border-bottom: 0.1vw solid #9933FF;
+    border-bottom: 1px solid #9933FF;
   }
   80% {
-    border-bottom: 0.1vw solid #FF33FF;
+    border-bottom: 1px solid #FF33FF;
   }
   88% {
-    border-bottom: 0.1vw solid #FF3399;
+    border-bottom: 1px solid #FF3399;
   }
   100% {
-    border-bottom: 0.1vw solid #FF3333;
+    border-bottom: 1px solid #FF3333;
   }
 }
 
@@ -276,7 +277,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: calc(100vh - 6vw);
+	height: calc(100vh - 8vh);
 	overflow: auto;
 }
 

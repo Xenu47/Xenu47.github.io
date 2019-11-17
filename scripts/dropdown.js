@@ -32,5 +32,5 @@ function mouseOver() {
 }
 
 function dropdown(i){
-	document.querySelector("#list_menu").setAttribute("style","top:"+i+"vw");
+	document.querySelector("#list_menu").setAttribute("style","top:"+(i*2)+"vh");
 }

@@ -114,8 +114,8 @@ function getData(num){
 	data[i][3]=n3;
 	n0=data[i][0];n1=data[i][1];n2=data[i][2];
 	console.log("current data array: "+data[i]);
-	document.getElementById("ninja").innerHTML = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
-	sessionStorage.ninjaValue = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
+	sessionStorage.ninjaValue = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles completed: "+n2;
+	document.getElementById("ninja").innerHTML = sessionStorage.ninjaValue;
 	console.log("ninja changed: \n"+sessionStorage.ninjaValue);
 	sessionStorage.randomizerList = JSON.stringify(data);
 }

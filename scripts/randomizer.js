@@ -97,6 +97,7 @@ var listUser=[
 ];
 // все вместе
 var list=listUseless.concat(listUseful.concat(listUser));
+var k=0;
 var n0="All";
 var n1=0;
 var n2=0;
@@ -104,6 +105,7 @@ var n3=list.length
 
 function getData(num){
 	let i = Math.floor(num/25);
+	console.log("=======================");
 	console.log("current slider stage: "+i);
 	var data=JSON.parse(sessionStorage.randomizerList);
 	if(data[i][0]==n0){
@@ -114,6 +116,7 @@ function getData(num){
 	console.log("current data array: "+data[i]);
 	document.getElementById("ninja").innerHTML = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
 	sessionStorage.ninjaValue = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles complete: "+n2;
+	console.log("ninja changed: \n"+sessionStorage.ninjaValue);
 	sessionStorage.randomizerList = JSON.stringify(data);
 }
 
@@ -132,7 +135,12 @@ function changeList(i){
 		list=listUser.concat();
 	}
 	n3=list.length;
-	getData(i);
+
+	let num = Math.floor(i/25);
+	if(num != k){
+		k=num;
+		getData(i);
+	}
 }
 
 // случайное целое число из диапазона
@@ -148,12 +156,16 @@ function getRandomPage(){
 		var win=window.open(item, '_blank'); // открытие сайта в новой вкладке
 		win.focus(); // в рабочем окне
 		list.splice(index, 1); // удаление элемента из списка по индексу
+		console.log("    opened: "+item);
+		console.log("    items left: "+list.length);
 	}
 
 	// если список закончился
 	if (list.length == 0){
+		console.log("        resetting list");
 		n2+=1; // количество прохождений всех сайтов
 		changeList(sessionStorage.randomizerValue); // генерируется новый ,такой же, список
+		console.log("        list resetted, items left: "+list.length);
 	}
 	getData(sessionStorage.randomizerValue);
 }

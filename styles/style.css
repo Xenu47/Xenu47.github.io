@@ -29,6 +29,7 @@
 	background: rgb(255, 205, 50);
 }
 html {
+	width: 100%;
 }
 
 /* изменение стандартного цвета, стиля и курсора ссылки */
@@ -100,11 +101,11 @@ header {
 	background: white;
 	outline: none;
 	opacity: 0.7;
-	border-radius: 1em;
+	border-radius: 1vw;
 	-webkit-transition: .2s;
 	transition: opacity .2s;
 	height: 6vh;
-	width: 8vw;
+	width: 20vw;
 	margin-top: 1vh;
 	margin-left: 0.5vw;
 	z-index: 102;
@@ -175,7 +176,7 @@ header {
 		'form loginb'
 		'form registerb';
 	grid-column-gap: 0;
-	grid-template-columns: 10.2vw 5vw;
+	grid-template-columns: 10.2vw 50%;
 	grid-template-rows: 3.4vh 3vh;
 	height: 8vh;
 	padding: 0.7vh 1vw 0 0;
@@ -229,49 +230,49 @@ header {
 
 /* подсветка снизу нав. панели текущей страницы */
 #current {
-	border-bottom: 1px solid #FF3333;
+	border-bottom: 0.2vh solid #FF3333;
 	animation: rainbow 1s infinite;
 }
 /* анимация радуги */
 @keyframes rainbow {
   0% {
-    border-bottom: 1px solid #FF3333;
+    border-bottom: 0.2vh solid #FF3333;
   }
   8% {
-    border-bottom: 1px solid #FF9933;
+    border-bottom: 0.2vh solid #FF9933;
   }
   16% {
-    border-bottom: 1px solid #FFFF33;
+    border-bottom: 0.2vh solid #FFFF33;
   }
   24% {
-    border-bottom: 1px solid #99FF33;
+    border-bottom: 0.2vh solid #99FF33;
   }
   32% {
-    border-bottom: 1px solid #33FF33;
+    border-bottom: 0.2vh solid #33FF33;
   }
   40% {
-    border-bottom: 1px solid #33FF99;
+    border-bottom: 0.2vh solid #33FF99;
   }
   48% {
-    border-bottom: 1px solid #33FFFF;
+    border-bottom: 0.2vh solid #33FFFF;
   }
   56% {
-    border-bottom: 1px solid #3399FF;
+    border-bottom: 0.2vh solid #3399FF;
   }
   64% {
-    border-bottom: 1px solid #3333FF;
+    border-bottom: 0.2vh solid #3333FF;
   }
   72% {
-    border-bottom: 1px solid #9933FF;
+    border-bottom: 0.2vh solid #9933FF;
   }
   80% {
-    border-bottom: 1px solid #FF33FF;
+    border-bottom: 0.2vh solid #FF33FF;
   }
   88% {
-    border-bottom: 1px solid #FF3399;
+    border-bottom: 0.2vh solid #FF3399;
   }
   100% {
-    border-bottom: 1px solid #FF3333;
+    border-bottom: 0.2vh solid #FF3333;
   }
 }
 
@@ -281,7 +282,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: calc(100vh - 8vh);
+	height: calc(100vh - 12vh);
 	overflow: auto;
 }
 
@@ -391,7 +392,7 @@ footer {
 
 
 /* adaptive */
-@media only screen and (max-device-width: 1000px) {
+@media only screen and (max-device-width: 700px) {
 	#nav_bar * {
 		font-size: 3vw;
 	}
@@ -408,6 +409,16 @@ footer {
 		padding: 0.7vh 1vw 0 0;
 	}
 	main {
-		font-size: 4vh;
+		font-size: 2vh;
+	}
+}
+
+@media only screen and (max-width: 1000px){
+	#footer_grid{
+		grid-template-areas:
+			'lorem'
+			'ipsum'
+			'social';
+		grid-template-columns: 100%;
 	}
 }

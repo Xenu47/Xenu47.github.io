@@ -21,13 +21,13 @@ window.onload = function(){
 window.onload = window.onload.extend(function(){
 	if(!sessionStorage.randomizerValue){
 		sessionStorage.randomizerValue = 0;
-  	let list = [["All", 0, 0, 0],["Useless", 0, 0, 0],["Useful", 0, 0, 0],["User", 0, 0, 0]];
-    sessionStorage.randomizerList = JSON.stringify(list);
-    console.log("created randomizerList");
+  	let list = [["All", 0, 0, 0, []],["Useless", 0, 0, 0, []],["Useful", 0, 0, 0, []],["User", 0, 0, 0, []]];
+    sessionStorage.randomizerDataList = JSON.stringify(list);
+    console.log("created randomizerDataList: \n"+sessionStorage.randomizerDataList);
 	}
 	else{
 		document.querySelector("#randomizer_range").value = sessionStorage.randomizerValue;
-    changeList(sessionStorage.randomizerValue);
-    console.log("randomizerList already exists");
+    changeList(sessionStorage.randomizerValue, 0);
+    console.log("randomizerList already exists: \n"+sessionStorage.randomizerDataList);
 	}
 })

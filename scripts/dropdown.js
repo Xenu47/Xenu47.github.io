@@ -1,4 +1,8 @@
 function mouseOver() {
+	// статус "в движении", тогда при повторном нажатии он не прекратит работу
+  if(document.getElementById("inv_val").innerHTML == "1"){
+    return;
+  }
 	// статус "закрыт", задатся начальную позицию и скорость
 	if(document.getElementById("inv_val").innerHTML == "0"){
 		var i = -2;
@@ -9,14 +13,14 @@ function mouseOver() {
 		var i = 6;
 		var step = -0.4;
 	}
-	// статус "в движении", тогда при повторном нажатии он не прекратит работу
+
 	document.getElementById("inv_val").innerHTML = "1";
 
-	var start = Date.now(); // время начала
+  var start = 0; // начало, 0 итераций
 	var timer = setInterval(function() {
-		var timePassed = Date.now() - start; // количество пройденного времени
-		// если оно больше чем нужно - присваивается новый статус
-		if (timePassed >= 210) {
+		start+=1; // +1 итерация
+		// если больше чем нужно - присваивается новый статус
+		if (start >= 21) {
 			if(step == 0.4){
 				document.getElementById("inv_val").innerHTML = "2";
 			}

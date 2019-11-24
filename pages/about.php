@@ -19,7 +19,7 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("a[href='about.html']").setAttribute("id", "current");
+			document.querySelector("a[href='about.php']").setAttribute("id", "current");
 		</script>
 
 		<main>

@@ -23,7 +23,7 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("a[href='randomizer.html']").setAttribute("id", "current");
+			document.querySelector("a[href='randomizer.php']").setAttribute("id", "current");
 		</script>
 
  		<main>

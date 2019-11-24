@@ -123,63 +123,12 @@ header {
 	height: 4vh;
 }
 
-/* отдельный стиль полей и формы */
-#username {
-}
-#password {
-}
-#form {
-	display: inline;
-	grid-area: form;
-	margin: 0;
-}
-
-/* стиль текстовых полей */
-.text_forms{
-	resize: none;
-	height: 3vh;
-	width: 10vw;
-	margin: 0.1vw;
-	border-radius: 2em;
-	outline: none;
-	font-size: 2vh;
-	overflow: hidden;
-	border: 0.05vw solid grey;
-	padding-left: 0.5vw;
-	padding-right: 0.5vw;
-}
-
-/* кнопки логина */
-#loginb {
-	grid-area: loginb;
-	margin-top: auto;
-	margin-bottom: auto;
-	text-align: left;
-	color: var(--footer-color);
-	font-size: 3vh;
-}
-#registerb {
-	grid-area: registerb;
-	margin-top: auto;
-	margin-bottom: auto;
-	text-align: left;
-	color: var(--footer-color);
-	font-size: 3vh;
-}
-
-/* вся форма логина в grid */
-#login_form {
+#account img {
 	position: absolute;
-	right: 1vw;
-	display: grid;
-	grid-template-areas:
-		'form loginb'
-		'form registerb';
-	grid-column-gap: 0;
-	grid-template-columns: 10.2vw 50%;
-	grid-template-rows: 3.4vh 3vh;
-	height: 8vh;
-	padding: 0.7vh 1vw 0 0;
+	right: 0.5vw;
+	top: 1vh;
+	width: auto;
+	height: 6vh;
 }
 
 /* черная навигационная панель */
@@ -395,18 +344,6 @@ footer {
 @media only screen and (max-device-width: 700px) {
 	#nav_bar * {
 		font-size: 3vw;
-	}
-	#loginb {
-		font-size: 3vw;
-	}
-	#registerb {
-		font-size: 3vw;
-	}
-	#login_form {
-		grid-template-columns: 10.2vw 12vw;
-		grid-template-rows: 3.4vh 3vh;
-		height: 8vh;
-		padding: 0.7vh 1vw 0 0;
 	}
 	main {
 		font-size: 2vh;

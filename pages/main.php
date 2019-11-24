@@ -19,7 +19,7 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("div#nav_bar a[href='main.html']").setAttribute("id", "current");
+			document.querySelector("div#nav_bar a[href='main.php']").setAttribute("id", "current");
 		</script>
 
 		<main>

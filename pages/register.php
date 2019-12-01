@@ -5,6 +5,9 @@
   if(isset($_SESSION['id'])) {
     header("Location: index.php");
   }
+  if(!isset($_SESSION['username'])){
+    $_SESSION['username'] = 'Guest';
+  }
 
   if(isset($_POST['register'])) {
     include_once("../db.php");
@@ -114,5 +117,8 @@
 
 		<!-- footer скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/footer.js"></script>
+    <script type="text/javascript">
+      document.querySelector('#account-name').innerHTML = "<?php echo $_SESSION['username']; ?>";
+    </script>
 	</body>
 </html>

@@ -1,3 +1,3 @@
 <?php
-  $db = mysqli_connect("localhost", "root", "", "account")
+  $db = mysqli_connect("localhost", "root", "", "unex-db")
 ?>

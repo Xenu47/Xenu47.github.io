@@ -123,12 +123,35 @@ header {
 	height: 4vh;
 }
 
-#account img {
+#account {
 	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	right: 0.5vw;
 	top: 1vh;
+	text-decoration: none;
+	line-height: 5.5vh;
+	font-size: 4vh;
+}
+#account * {
+	min-width: 3.5vw;
+}
+#account-name {
+	user-select: all;
+	color: black;
+	max-width: 20vw;
+	overflow-y: auto;
+}
+#in {
 	width: auto;
 	height: 6vh;
+	transform: rotate(-90deg);
+}
+#out {
+	width: auto;
+	height: 6vh;
+	transform: rotate(90deg);
 }
 
 /* черная навигационная панель */

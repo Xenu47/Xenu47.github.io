@@ -4,9 +4,11 @@ document.write(`
 			<!-- желтая часть. название и логин -->
 			<div id="head">
 				<a href="main.php" id="logo">UNEX</a>
-				<a href="account.php" id="account">
-					<img src="../images/door.png">
-				</a>
+				<div id="account">
+					<a href="account.php" id="account-name"></a>
+					<a href="account.php"><img src="../images/in.svg" id="in"></a>
+					<a href="logout.php"><img src="../images/out.svg" id="out"></a>
+				</div>
 			</div>
 
 

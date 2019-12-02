@@ -3,6 +3,9 @@
     $result = "";
     $emote = 'smile';
 
+    if(isset($_SESSION['id'])) {
+      header("Location: account.php");
+    }
     if(!isset($_SESSION['username'])){
     	$_SESSION['username'] = 'Guest';
     }
@@ -65,8 +68,8 @@
 			<form action="login.php" method="post" id="login_form">
         <p style="height: 1em;"><?php echo $result; ?></p>
 				<div style="height: 250px;">
-          <input placeholder="Username" name="username" type="text" autofocus>
-          <input placeholder="Password" name="password" type="password">
+          <input placeholder="Username" name="username" type="text" autocomplete="off" autofocus>
+          <input placeholder="Password" name="password" type="password" autocomplete="off">
 				</div>
 				<button type="submit" name="login">Login</button>
 				<a href="register.php">Register</a>

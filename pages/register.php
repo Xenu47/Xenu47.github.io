@@ -1,7 +1,8 @@
 <?php
+  session_start();
   $result = "";
   $emote = 'smile';
-  $content = file_get_contents('register.php');
+
   if(isset($_SESSION['id'])) {
     header("Location: index.php");
   }
@@ -63,6 +64,13 @@
     else {
       mysqli_query($db, $sql_store);
 
+      $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
+      $query = mysqli_query($db, $sql);
+      $row = mysqli_fetch_array($query);
+      $id = $row['id'];
+
+      $_SESSION['username'] = $username;
+      $_SESSION['id'] = $id;
       header("Location: account.php");
     }
   }
@@ -105,10 +113,10 @@
 			<form action="register.php" method="post" id="register_form">
         <p style="height: 1em;"><?php echo $result; ?></p>
 				<div style="height: 250px;">
-          <input placeholder="Username" name="username" type="text" autofocus>
-          <input placeholder="Password" name="password" type="password">
-          <input placeholder="Confirm Password" name="password_confirm" type="password">
-          <input placeholder="E-Mail Address" name="email" type="text">
+          <input placeholder="Username" name="username" type="text" autocomplete="off" autofocus>
+          <input placeholder="Password" name="password" type="password" autocomplete="off">
+          <input placeholder="Confirm Password" name="password_confirm" type="password" autocomplete="off">
+          <input placeholder="E-Mail Address" name="email" type="text" autocomplete="off">
 				</div>
 				<button type="submit" name="register">Register</button>
 				<a href="login.php">Login</a>

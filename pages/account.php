@@ -4,9 +4,9 @@
 	if(!isset($_SESSION['id'])) {
 		header("Location: login.php");
 	}
-    if(!isset($_SESSION['username'])){
-    	$_SESSION['username'] = 'Guest';
-    }
+  if(!isset($_SESSION['username'])){
+  	$_SESSION['username'] = 'Guest';
+  }
 ?>
 
 <!DOCTYPE html5>

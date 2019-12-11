@@ -1,78 +1,8 @@
 <?php
   session_start();
-  $result = "";
-  $emote = 'smile';
 
   if(isset($_SESSION['id'])) {
-    header("Location: index.php");
-  }
-  if(!isset($_SESSION['username'])){
-    $_SESSION['username'] = 'Guest';
-  }
-
-  if(isset($_POST['register'])) {
-    include_once("../db.php");
-    $username = strip_tags($_POST['username']);
-    $password = strip_tags($_POST['password']);
-    $password_confirm = strip_tags($_POST['password_confirm']);
-    $email = strip_tags($_POST['email']);
-
-    $username = stripslashes($username);
-    $password = stripslashes($password);
-    $password_confirm = stripslashes($password_confirm);
-    $email = stripslashes($email);
-
-    $username = mysqli_real_escape_string($db, $username);
-    $password = mysqli_real_escape_string($db, $password);
-    $password_confirm = mysqli_real_escape_string($db, $password_confirm);
-    $email = mysqli_real_escape_string($db, $email);
-
-    $password = md5($password);
-    $password_confirm = md5($password_confirm);
-
-    $sql_store = "INSERT into users (username, password, email) VALUES ('$username','$password','$email')";
-    $sql_fetch_username = "SELECT username FROM users WHERE username = '$username'";
-    $sql_fetch_email = "SELECT email FROM users WHERE email = '$email'";
-
-    $query_username = mysqli_query($db, $sql_fetch_username);
-    $query_email = mysqli_query($db, $sql_fetch_email);
-
-    if ($username == "") {
-      $result = 'Please enter username';
-      $emote = 'rage';
-    }
-    elseif (mysqli_num_rows($query_username)) {
-      $result = 'There is already user with that name!';
-      $emote = 'rage';
-    }
-    elseif ($password == "" || $password_confirm == "") {
-      $result = 'Please enter your password';
-      $emote = 'rage';
-    }
-    elseif ($password != $password_confirm) {
-      $result = 'The passwords do not match!';
-      $emote = 'rage';
-    }
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || $email == "") {
-      $result = 'This email is not valid!';
-      $emote = 'rage';
-    }
-    elseif (mysqli_num_rows($query_email)) {
-      $result = 'This email is already in use!';
-      $emote = 'rage';
-    }
-    else {
-      mysqli_query($db, $sql_store);
-
-      $sql = "SELECT * FROM users WHERE username='$username' LIMIT 1";
-      $query = mysqli_query($db, $sql);
-      $row = mysqli_fetch_array($query);
-      $id = $row['id'];
-
-      $_SESSION['username'] = $username;
-      $_SESSION['id'] = $id;
-      header("Location: account.php");
-    }
+    header("Location: account.php");
   }
 ?>
 
@@ -89,7 +19,7 @@
 		<!-- выпадающее меню -->
 		<script type="text/javascript" src="../scripts/dropdown.js"></script>
 		<!-- логин система -->
-		<script type="text/javascript" src="../scripts/login.js"></script>
+		<script type="text/javascript" src="../scripts/auth.js"></script>
 		<!-- изменение яркости -->
 		<script type="text/javascript" src="../scripts/brightness.js"></script>
 		<script>
@@ -109,24 +39,21 @@
 		<script src="../includes/header.js"></script>
 
 		<main>
-			<img src="../images/<?php echo $emote; ?>.svg" id="image_status">
-			<form action="register.php" method="post" id="register_form">
-        <p style="height: 1em;"><?php echo $result; ?></p>
+			<img src="../images/smile.svg" id="image_status">
+			<form method="post" name="register" id="register_form">
+        <p style="height: 1.5em;">please be patient I have autism</p>
 				<div style="height: 250px;">
           <input placeholder="Username" name="username" type="text" autocomplete="off" autofocus>
           <input placeholder="Password" name="password" type="password" autocomplete="off">
           <input placeholder="Confirm Password" name="password_confirm" type="password" autocomplete="off">
           <input placeholder="E-Mail Address" name="email" type="text" autocomplete="off">
 				</div>
-				<button type="submit" name="register">Register</button>
+				<button type="submit">Register</button>
 				<a href="login.php">Login</a>
 			</form>
 		</main>
 
 		<!-- footer скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/footer.js"></script>
-    <script type="text/javascript">
-      document.querySelector('#account-name').innerHTML = "<?php echo $_SESSION['username']; ?>";
-    </script>
 	</body>
 </html>

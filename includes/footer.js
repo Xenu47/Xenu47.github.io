@@ -5,7 +5,7 @@ document.write(`
 			<div id="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum nunc vel felis rutrum, eu blandit purus pharetra. Nunc eget nisl vitae nisl facilisis mollis non vitae nunc. In at est quis eros semper maximus. Aliquam non nunc vel ligula bibendum accumsan sit amet eget lacus. Maecenas augue arcu, cursus nec aliquet eget, gravida sed nisl. Proin sit amet porttitor purus. Nam in vestibulum neque, ac pharetra nisl. Etiam sollicitudin odio id neque lacinia imperdiet. Maecenas viverra est eu maximus lacinia.</div>
 
 			<div id="ipsum">Suspendisse non enim urna. Aenean faucibus a justo vitae hendrerit. Nullam aliquet mollis sodales. Nullam eu quam sed arcu ullamcorper rhoncus a eu tellus. Morbi sed ex eget nisi feugiat aliquet. Mauris quis consectetur ex. Nam lacinia pellentesque augue, vitae rhoncus sem facilisis convallis. Aenean faucibus pharetra venenatis. Aliquam erat volutpat. Quisque mollis mi non lectus laoreet bibendum. Fusce porttitor vulputate rhoncus. Proin dapibus blandit arcu, malesuada accumsan lectus placerat vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse non ullamcorper felis.</div>
-			
+
 			<!-- блок с соц сетями. картнки векторные, созданы в браузере -->
 			<div id="social">
 				<a target="_blank" href="https://www.facebook.com/">

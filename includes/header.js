@@ -7,7 +7,7 @@ document.write(`
 				<div id="account">
 					<a href="account.php" id="account-name"></a>
 					<a href="account.php"><img src="../images/in.svg" id="in"></a>
-					<a href="logout.php"><img src="../images/out.svg" id="out"></a>
+					<a onclick="logout()"><img src="../images/out.svg" id="out"></a>
 				</div>
 			</div>
 

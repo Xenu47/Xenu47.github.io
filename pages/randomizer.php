@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>UNEX</title>
+	  <link rel="icon" href="../favicon.ico" type="image/gif" sizes="16x16">
 
 		<!-- стили -->
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -27,6 +28,7 @@
 		</script>
 
  		<main>
+			<script src="../includes/account.js"></script>
  			<!-- блок рандомайзера -->
 			<div id="randomizer">
 				<div id="randomizer_base">
@@ -34,7 +36,7 @@
 					<p id="randomizer-2"> MEMES ARE NEAT </p>
 					<p id="randomizer-3"> I WANT TO DIE </p>
 					<!-- кнопка вызывает открытие случайной страницы и звук -->
-					<p><button id="randomizer_button" onclick="getRandomPage()" onmousedown="PlaySound('press');" onmouseup="PlaySound('release')">LMAO YEET</button></p>
+					<p><button id="randomizer_button" onclick="getRandomPage()">LMAO YEET</button></p>
 				</div>
 
 				<div id="randomizer_choose">

@@ -1,6 +1,6 @@
 /* стиль блока рандомизатора */
 #randomizer {
-	padding: 100px 0 200px 0;
+	padding: 20px 0 200px 0;
 }
 /* стиль всего, кроме кнопки и нинзи */
 #randomizer_base *:not(#randomizer_button) {

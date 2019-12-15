@@ -5,8 +5,8 @@ document.write(`
 			<div id="head">
 				<a href="main.php" id="logo">UNEX</a>
 				<div id="account">
-					<a href="account.php" id="account-name"></a>
-					<a href="account.php"><img src="../images/in.svg" id="in"></a>
+					<a onclick="showLogin()" id="account-name"></a>
+					<a onclick="showLogin()"><img src="../images/in.svg" id="in"></a>
 					<a onclick="logout()"><img src="../images/out.svg" id="out"></a>
 				</div>
 			</div>
@@ -27,10 +27,10 @@ document.write(`
 
 			<!-- выпадающий список -->
 			<div id="list_menu" onclick="mouseOver()">
-				<a href="website list.php#all">All</a>
-				<a href="website list.php#useless">Useless</a>
-				<a href="website list.php#useful">Useful</a>
-				<a href="website list.php#user">User</a>
+				<a href="website_list.php#all">All</a>
+				<a href="website_list.php#useless">Useless</a>
+				<a href="website_list.php#useful">Useful</a>
+				<a href="website_list.php#user">User</a>
 			</div>
 		</header>
 

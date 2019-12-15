@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>UNEX</title>
+	  <link rel="icon" href="../favicon.ico" type="image/gif" sizes="16x16">
 		<!-- стили -->
 		<link rel="stylesheet" type="text/css" href="../styles/style.css">
 		<!-- скрипты -->
@@ -23,6 +24,7 @@
 		</script>
 
 		<main>
+			<script src="../includes/account.js"></script>
 			<!-- CONTENT -->
 		</main>
 

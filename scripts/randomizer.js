@@ -4,7 +4,6 @@ window.onload = window.onload.extend(function(){
 		data=JSON.parse(sessionStorage.randomizerDataList);
 		console.log("initial data parse:\n"+data);
 		changeList(sessionStorage.randomizerValue, 0);
-		getData(sessionStorage.randomizerValue);
 		console.log("datalist created");
 	}
 	else{
@@ -12,96 +11,36 @@ window.onload = window.onload.extend(function(){
 		changeList(sessionStorage.randomizerValue, 0);
 		console.log("datalist loaded");
 	}
+  data[0][3]=listUser.length+listUseless.length+listUseful.length;
+  data[1][3]=listUseless.length;
+  data[2][3]=listUseful.length;
+  data[3][3]=listUser.length;
+  getData(sessionStorage.randomizerValue);
 	console.log("onload complete");
 	console.log("\n\n\n");
 })
 
+
+let request = new XMLHttpRequest();
+request.open("GET", "../data/website_list.json", false);
+request.send(null)
+var website_data = JSON.parse(request.responseText);
+
 // не очень полезные сайты
-var listUseless=[
-	"http://heeeeeeeey.com",
-	"http://tinytuba.com",
-	"http://corndog.io",
-	"http://cant-not-tweet-this.com",
-	"http://weirdorconfusing.com",
-	"https://www.eyes-only.net",
-	"http://eelslap.com",
-	"http://www.staggeringbeauty.com",
-	"http://burymewithmymoney.com",
-	"http://endless.horse",
-	"http://www.republiquedesmangues.fr",
-	"http://www.movenowthinklater.com",
-	"http://www.partridgegetslucky.com",
-	"http://www.rrrgggbbb.com",
-	"http://beesbeesbees.com",
-	"http://www.koalastothemax.com",
-	"http://www.everydayim.com",
-	"http://cat-bounce.com",
-	"http://chrismckenzie.com",
-	"http://hasthelargehadroncolliderdestroyedtheworldyet.com",
-	"http://ninjaflex.com",
-	"http://ihasabucket.com",
-	"http://corndogoncorndog.com",
-	"http://imaninja.com",
-	"http://www.ismycomputeron.com",
-	"http://www.nullingthevoid.com",
-	"http://www.muchbetterthanthis.com",
-	"http://www.yesnoif.com",
-	"http://iamawesome.com",
-	"http://www.pleaselike.com",
-	"http://crouton.net",
-	"http://www.wutdafuk.com",
-	"http://unicodesnowmanforyou.com",
-	"http://www.crossdivisions.com",
-	"http://tencents.info",
-	"http://www.patience-is-a-virtue.org",
-	"http://whitetrash.nl",
-	"http://www.theendofreason.com",
-	"http://pixelsfighting.com",
-	"http://isitwhite.com",
-	"http://onemillionlols.com",
-	"http://www.omfgdogs.com",
-	"http://oct82.com",
-	"http://chihuahuaspin.com",
-	"http://www.blankwindows.com",
-	"http://dogs.are.the.most.moe",
-	"http://tunnelsnakes.com",
-	"http://www.trashloop.com",
-	"http://www.ascii-middle-finger.com",
-	"http://buildshruggie.com",
-	"http://buzzybuzz.biz",
-	"http://yeahlemons.com",
-	"http://burnie.com",
-	"http://wowenwilsonquiz.com",
-	"https://thepigeon.org",
-	"http://www.amialright.com"];
+var listUseless=[];
+for(let i = 0; i<(website_data.listUseless).length; i++){
+  listUseless.push(website_data.listUseless[i].link);
+};
 // полезные сайты
-var listUseful=[
-	"http://www.trypap.com",
-	"http://randomcolour.com",
-	"http://www.hackertyper.com",
-	"https://pointerpointer.com",
-	"http://corgiorgy.com",
-	"http://spaceis.cool",
-	"http://www.donothingfor2minutes.com",
-	"http://notdayoftheweek.com",
-	"http://notdayoftheweek.com",
-	"http://nooooooooooooooo.com",
-	"https://paletton.com",
-	"https://htmlcolorcodes.com",
-	"https://privnote.com",
-	"http://whatthefuckshouldimakefordinner.com",
-	"https://www.strawpoll.me",
-	"https://fast.com",
-	"https://gtmetrix.com",
-	"https://vectr.com/new",
-	"https://ru.lmgtfy.com",
-	"https://www.myfonts.com/WhatTheFont",
-	"https://everytimezone.com",
-	"https://www.flightradar24.com"];
+var listUseful=[];
+for(let i = 0; i<(website_data.listUseful).length; i++){
+  listUseful.push(website_data.listUseful[i].link);
+};
 // пользовательские сайты
-var listUser=[
-	"https://scrollbars.matoseb.com"
-];
+var listUser=[];
+for(let i = 0; i<(website_data.listUser).length; i++){
+  listUser.push(website_data.listUser[i].link);
+};
 // все вместе
 var list=[];
 var data="";
@@ -120,13 +59,13 @@ function changeList(num, reset){
 			data[i][4]=listUseless.concat(listUseful.concat(listUser));
 		}
 		else if (i == 1) {
-			data[i][4]=listUseless.concat();
+			data[i][4]=listUseless;
 		}
 		else if (i == 2) {
-			data[i][4]=listUseful.concat();
+			data[i][4]=listUseful;
 		}
 		else if (i == 3) {
-			data[i][4]=listUser.concat();
+			data[i][4]=listUser;
 		}
 		n3=data[i][4].length;
 	}
@@ -152,7 +91,7 @@ function getData(num){
 	data[i][4]=list;
 	n0=data[i][0];n1=data[i][1];n2=data[i][2];n3=data[i][3];
 	console.log("current data array: \n"+data[i]);
-	sessionStorage.ninjaValue = n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles completed: "+n2;
+	sessionStorage.ninjaValue ="<div style='display:inline; color:black;'>This session stats:</div></br>"+ n0+" pages viewed: "+n1+"</br>Total pages: "+n3+"</br>Cycles completed: "+n2;
 	document.getElementById("ninja").innerHTML = sessionStorage.ninjaValue;
 	console.log("ninja changed: \n"+sessionStorage.ninjaValue);
 	sessionStorage.randomizerDataList	= JSON.stringify(data);

@@ -31,9 +31,15 @@ window.onload = window.onload.extend(function(){
       document.querySelector('form > p').innerHTML = "You've already logged in";
     }
 		document.querySelector('#account-name').innerHTML = sessionStorage.username;
-		if(document.querySelector('#login_form')){document.querySelector('#login_form').addEventListener('submit',login);}
-		if(document.querySelector('#register_form')){document.querySelector('#register_form').addEventListener('submit',register);}
-		if(document.querySelector('#add_website')){document.querySelector('#add_website').addEventListener('submit',add_website);}
+		if(document.querySelector('#login_form')){
+      document.querySelector('#login_form').addEventListener('submit',login);
+    }
+		if(document.querySelector('#register_form')){
+      document.querySelector('#register_form').addEventListener('submit',register);
+    }
+		if(document.querySelector('#add_website')){
+      document.querySelector('#add_website').addEventListener('submit',add_website);
+    }
 })
 
 // randomizer range

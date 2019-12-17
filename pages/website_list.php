@@ -34,8 +34,6 @@
 		<!-- мейн с контентом из ссылок на сайты генератора -->
 		<main id="all"><center>
 		<script src="../includes/account.js"></script>
-      Hello
-			<img src="../images/kot.png" style="display: flex; height: 400px;" class="responsive-image">
 
 			<!-- помойка --></br>
       <table id="useless" style="width: 600px;">

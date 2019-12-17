@@ -360,6 +360,7 @@ main {
   margin: 5px 25% 0 25%;
   background-color: white;
   color: grey;
+  user-select: none;
   border: 2px solid grey;
   border-radius: 10px;
 	font-size: 1em;

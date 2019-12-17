@@ -15,12 +15,12 @@ function login(event) {
 				for (let i = 0; i < x.length; i++) {
 					x[i].disabled = true;
 				}
-				document.querySelector('form > button').style.display = 'none';
-				document.querySelector('form > a').style.display = 'none';
-        document.querySelector('form > p').innerHTML = "You've already logged in";
+				document.querySelector('#login_block form > button').style.display = 'none';
+				document.querySelector('#login_block form > a').style.display = 'none';
+        document.querySelector('#login_block form > p').innerHTML = "You've already logged in";
 			}
-			document.querySelector('form > p').innerHTML = check['error'];
-			document.querySelector('#image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
+			document.querySelector('#login_block form > p').innerHTML = check['error'];
+			document.querySelector('#login_block #image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
   		if(document.querySelector('#add_website')){
         document.querySelector('#add_website').style.setProperty('display', 'block');
       }
@@ -46,12 +46,12 @@ function register(event) {
 				for (let i = 0; i < x.length; i++) {
 					x[i].disabled = true;
 				}
-				document.querySelector('form > button').style.display = 'none';
-				document.querySelector('form > a').style.display = 'none';
-        document.querySelector('form > p').innerHTML = "You've already logged in";
+				document.querySelector('#register_block form > button').style.display = 'none';
+				document.querySelector('#register_block form > a').style.display = 'none';
+        document.querySelector('#register_block form > p').innerHTML = "You've already logged in";
 			}
-			document.querySelector('form > p').innerHTML = check['error'];
-			document.querySelector('#image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
+			document.querySelector('#register_block form > p').innerHTML = check['error'];
+			document.querySelector('#register_block #image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
   		if(document.querySelector('#add_website')){
         document.querySelector('#add_website').style.setProperty('display', 'block');
       }

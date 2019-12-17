@@ -3,7 +3,7 @@ document.write(`
 		<header>
 			<!-- желтая часть. название и логин -->
 			<div id="head">
-				<a href="main.php" id="logo">UNEX</a>
+				<a href="main" id="logo">UNEX</a>
 				<div id="account">
 					<a onclick="showLogin()" id="account-name"></a>
 					<a onclick="showLogin()"><img src="../images/in.svg" id="in"></a>
@@ -15,22 +15,22 @@ document.write(`
 			<!-- черная часть, навигация по сайту -->
 			<div id="nav_bar">
 				<span></span>
-				<a href="main.php">MAIN</a>
+				<a href="../main">MAIN</a>
 				<span>|</span>
-				<a href="randomizer.php">RANDOMIZER</a>
+				<a href="../randomizer">RANDOMIZER</a>
 				<span>|</span>
 				<a onclick="mouseOver()">WEBSITE LIST</a>
 				<span>|</span>
-				<a href="about.php">ABOUT</a>
+				<a href="../about">ABOUT</a>
 				<span></span>
 			</div>
 
 			<!-- выпадающий список -->
 			<div id="list_menu" onclick="mouseOver()">
-				<a href="website_list.php#all">All</a>
-				<a href="website_list.php#useless">Useless</a>
-				<a href="website_list.php#useful">Useful</a>
-				<a href="website_list.php#user">User</a>
+				<a href="../websitelist">All</a>
+				<a href="../listuseless">Useless</a>
+				<a href="../listuseful">Useful</a>
+				<a href="../listuser">User</a>
 			</div>
 		</header>
 

@@ -25,7 +25,10 @@
 
 		<main>
 			<script src="../includes/account.js"></script>
-			<!-- CONTENT -->
+			<center>
+				<img src="../images/kot.png" class="responsive-image"><br>
+				Page not found
+			</center>
 		</main>
 
 		<!-- footer скриптом, чтобы не повторять в каждом файле -->

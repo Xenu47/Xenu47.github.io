@@ -1,7 +1,7 @@
 <!DOCTYPE html5>
 <html>
    	<head>
-   		<meta http-equiv='refresh' content='0; URL=pages/main.php'>
+   		<meta http-equiv='refresh' content='0; URL=../main'>
    	</head>
    	<body>
 

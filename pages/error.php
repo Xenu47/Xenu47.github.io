@@ -20,14 +20,16 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("a[]").setAttribute("id", "current");
+			document.querySelector("#nav_bar").setAttribute("class", "current");
 		</script>
 
 		<main>
 			<script src="../includes/account.js"></script>
 			<center>
+				<br><br><br><br>
 				<img src="../images/kot.png" class="responsive-image"><br>
 				Page not found
+				<br><br><br><br><br><br><br>
 			</center>
 		</main>
 

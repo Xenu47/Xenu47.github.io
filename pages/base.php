@@ -20,7 +20,7 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("a[]").setAttribute("id", "current");
+			document.querySelector("a[]").setAttribute("class", "current");
 		</script>
 
 		<main>

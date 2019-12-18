@@ -1,5 +1,5 @@
 <?php
-    include_once("../db.php");
+    include_once("../data/db.php");
     $username = strip_tags($_POST['username']);
     $password = strip_tags($_POST['password']);
 
@@ -16,7 +16,7 @@
     $db_username = $row['username'];
     $db_password = $row['password'];
 
-    if($username != '' && $password != '' && $username == $db_username && $password == $db_password) {
+    if($username == $db_username && password_verify($password, $db_password)) {
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['id'] = $id;

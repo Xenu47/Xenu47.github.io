@@ -201,7 +201,7 @@ header {
 }
 
 /* подсветка снизу нав. панели текущей страницы */
-#current {
+.current {
 	border-bottom: 0.2vh solid #FF3333;
 	animation: rainbow 1s infinite;
 }

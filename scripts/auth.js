@@ -7,19 +7,13 @@ function login(event) {
   request.onreadystatechange = function () {
 		if (request.readyState == 4 && request.status == 200){
 			let check = request.responseText;
+      console.log(check);
 			check = JSON.parse(check);
 			if(check['error'] == ''){
 				sessionStorage.username = check['username'];
-				document.querySelector('#account-name').innerHTML = sessionStorage.username;
-				let x = document.querySelectorAll('#form_area input');
-				for (let i = 0; i < x.length; i++) {
-					x[i].disabled = true;
-				}
-				document.querySelector('#login_block form > button').style.display = 'none';
-				document.querySelector('#login_block form > a').style.display = 'none';
-        document.querySelector('#login_block form > p').innerHTML = "You've already logged in";
+        successLogin();
 			}
-			document.querySelector('#login_block form > p').innerHTML = check['error'];
+      else { document.querySelector('#login_block form > p').innerHTML = check['error']; }
 			document.querySelector('#login_block #image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
   		if(document.querySelector('#add_website')){
         document.querySelector('#add_website').style.setProperty('display', 'block');
@@ -38,19 +32,13 @@ function register(event) {
   request.onreadystatechange = function () {
 		if (request.readyState == 4 && request.status == 200){
 			let check = request.responseText;
+      console.log(check);
 			check = JSON.parse(check);
 			if(check['error'] == ''){
 				sessionStorage.username = check['username'];
-				document.querySelector('#account-name').innerHTML = sessionStorage.username;
-				let x = document.querySelectorAll('#form_area input');
-				for (let i = 0; i < x.length; i++) {
-					x[i].disabled = true;
-				}
-				document.querySelector('#register_block form > button').style.display = 'none';
-				document.querySelector('#register_block form > a').style.display = 'none';
-        document.querySelector('#register_block form > p').innerHTML = "You've already logged in";
+        successLogin();
 			}
-			document.querySelector('#register_block form > p').innerHTML = check['error'];
+      else { document.querySelector('#register_block form > p').innerHTML = check['error']; }
 			document.querySelector('#register_block #image_status').setAttribute('src', '../images/'+check['emote']+'.svg');
   		if(document.querySelector('#add_website')){
         document.querySelector('#add_website').style.setProperty('display', 'block');
@@ -70,7 +58,9 @@ function logout() {
 			document.querySelector('#account-name').innerHTML = sessionStorage.username;
       document.querySelector('form > button').style.display = 'block';
       document.querySelector('form > a').style.display = 'block';
-      document.querySelector('form > p').innerHTML = "please be patient I have autism";
+      document.querySelector('#register_block form > p').innerHTML = "Greetings traveler!";
+      document.querySelector('#login_block form > p').innerHTML = "Greetings traveler!";
+			document.querySelector('#register_block #image_status').setAttribute('src', '../images/smile.svg');
       let x = document.querySelectorAll('#form_area input');
       for (let i = 0; i < x.length; i++) {
         x[i].disabled = false;
@@ -122,4 +112,15 @@ function add_website(event) {
 		}
   }
   request.send(formData);
+}
+
+function successLogin() {
+  document.querySelector('#account-name').innerHTML = sessionStorage.username;
+  let x = document.querySelectorAll('#form_area input');
+  for (let i = 0; i < x.length; i++) {
+    x[i].disabled = true;
+  }
+  document.querySelector('#login_block form > button').style.display = 'none';
+  document.querySelector('#login_block form > a').style.display = 'none';
+  document.querySelector('#login_block form > p').innerHTML = "You've already logged in";
 }

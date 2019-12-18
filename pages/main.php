@@ -20,12 +20,16 @@
 		<!-- header скриптом, чтобы не повторять в каждом файле -->
 		<script src="../includes/header.js"></script>
 		<script type="text/javascript">
-			document.querySelector("div#nav_bar a[href='../main']").setAttribute("id", "current");
+			document.querySelector("div#nav_bar a[href='/']").setAttribute("class", "current");
 		</script>
 
 		<main>
 			<script src="../includes/account.js"></script>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum nunc vel felis rutrum, eu blandit purus pharetra. Nunc eget nisl vitae nisl facilisis mollis non vitae nunc. In at est quis eros semper maximus. Aliquam non nunc vel ligula bibendum accumsan sit amet eget lacus. Maecenas augue arcu, cursus nec aliquet eget, gravida sed nisl. Proin sit amet porttitor purus. Nam in vestibulum neque, ac pharetra nisl. Etiam sollicitudin odio id neque lacinia imperdiet. Maecenas viverra est eu maximus lacinia.<br><br>
+			<div style="min-height:400;"><img src="../images/front.png" class="responsive-image" align="left" style="height: 400;border:1px solid black;">Welcome to UNEX!<br><br>The website is not created for massive textwalls that I am trying to create on this page.<br><br>Main purpose of UNEX - entertain the user by giving him random useless interesting sites. This can be achieved *<a href="/randomizer">here</a>*<br><br>UI should make you want to explore the website, not read it.<br><br>What are you waiting for? Go ahead and start your random adventure!</div><br>
+
+			<div style="min-height:400;"><img src="../images/rus.jpg" class="responsive-image" align="right" style="height: 400;border:1px solid black;">Надоело на буржуйском писать!<xmp><script> НАЧАТЬ РУССИФИКАЦИЮ </script></xmp>Русский язык велик! <br>Почему не английский, на котором говорит, чуть ли не пол планеты. Ведь именно за английским языком закреплен статус международного языка. Формат всех международных форумов и конференций, а также документация официально за английским языком. Но великим и могучим все равно считается русский язык.<br>Или же взять другие языки — китайский с их более чем 50 000 иероглифами. Китайский язык выучить невероятно сложно. Сами китайцы в большей мере знают около 8000 иероглифов — для нормального общения, чтения и понимания друг друга — этого вполне достаточно. Китайский язык — сложный, один из самых древних языков, и его носителями является более 1.4 млрд. человек, но при всем уважении к китайцам он не могучий и не великий…</div><br>
+
+			<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vestibulum nunc vel felis rutrum, eu blandit purus pharetra. Nunc eget nisl vitae nisl facilisis mollis non vitae nunc. In at est quis eros semper maximus. Aliquam non nunc vel ligula bibendum accumsan sit amet eget lacus. Maecenas augue arcu, cursus nec aliquet eget, gravida sed nisl. Proin sit amet porttitor purus. Nam in vestibulum neque, ac pharetra nisl. Etiam sollicitudin odio id neque lacinia imperdiet. Maecenas viverra est eu maximus lacinia.</div><br>
 
 			Suspendisse non enim urna. Aenean faucibus a justo vitae hendrerit. Nullam aliquet mollis sodales. Nullam eu quam sed arcu ullamcorper rhoncus a eu tellus. Morbi sed ex eget nisi feugiat aliquet. Mauris quis consectetur ex. Nam lacinia pellentesque augue, vitae rhoncus sem facilisis convallis. Aenean faucibus pharetra venenatis. Aliquam erat volutpat. Quisque mollis mi non lectus laoreet bibendum. Fusce porttitor vulputate rhoncus. Proin dapibus blandit arcu, malesuada accumsan lectus placerat vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse non ullamcorper felis.<br><br>
 

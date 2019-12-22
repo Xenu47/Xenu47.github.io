@@ -62,7 +62,7 @@
 					</tr>
 					<tr>
 						<td>🚼</td>
-						<td><a href="http://youtube.com" target="_blank">Youtube</a></td>
+						<td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Youtube</a></td>
 					</tr>
 				</tbody>
 			</table>

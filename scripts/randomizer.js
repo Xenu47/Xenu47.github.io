@@ -107,7 +107,7 @@ function getRandomPage(){
 	n1+=1;
 	var index=getRndInt(0, data[i][4].length); // индекс сайта
 	if (list.length != 0){
-		var item=list[index]; // сайт по индексу из общего списка
+		var item='http://'+list[index]; // сайт по индексу из общего списка
 		var win=window.open(item, '_blank'); // открытие сайта в новой вкладке
 		win.focus(); // в рабочем окне
 		console.log("list to get from: "+list);

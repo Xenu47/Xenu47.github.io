@@ -70,17 +70,17 @@ window.onload = window.onload.extend(function(){
       var website_data = JSON.parse(request.responseText);
 
       for(let i = 0; i<(website_data.listUseless).length; i++){
-        let html = "<tr><td>"+website_data.listUseless[i]['username']+"</td><td><a href='//"+website_data.listUseless[i]['link']+"'>"+website_data.listUseless[i]['link']+"</a></td></tr>";
+        let html = "<tr><td>"+website_data.listUseless[i]['username']+"</td><td><a href='http://"+website_data.listUseless[i]['link']+"'>"+website_data.listUseless[i]['link']+"</a></td></tr>";
         document.querySelector('#useless').insertAdjacentHTML('beforeEnd', html);
       };
 
       for(let i = 0; i<(website_data.listUseful).length; i++){
-        let html = "<tr><td>"+website_data.listUseful[i]['username']+"</td><td><a href='//"+website_data.listUseful[i]['link']+"'>"+website_data.listUseful[i]['link']+"</a></td></tr>";
+        let html = "<tr><td>"+website_data.listUseful[i]['username']+"</td><td><a href='http://"+website_data.listUseful[i]['link']+"'>"+website_data.listUseful[i]['link']+"</a></td></tr>";
         document.querySelector('#useful').insertAdjacentHTML('beforeEnd', html);
       };
 
       for(let i = 0; i<(website_data.listUser).length; i++){
-        let html = "<tr><td>"+website_data.listUser[i]['username']+"</td><td><a href='//"+website_data.listUser[i]['link']+"'>"+website_data.listUser[i]['link']+"</a></td></tr>";
+        let html = "<tr><td>"+website_data.listUser[i]['username']+"</td><td><a href='http://"+website_data.listUser[i]['link']+"'>"+website_data.listUser[i]['link']+"</a></td></tr>";
         document.querySelector('#user').insertAdjacentHTML('beforeEnd', html);
       };
     }

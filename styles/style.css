@@ -487,8 +487,11 @@ footer {
 	main {
 		font-size: 2vh;
 	}
-	#content{
-		overflow:hidden;
+	::-webkit-scrollbar {
+		width: 0;
+	}
+	#account-name{
+		display: none;
 	}
 }
 

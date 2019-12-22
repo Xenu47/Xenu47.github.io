@@ -28,7 +28,7 @@ window.onload = window.onload.extend(function(){
       }
       document.querySelector('form > button').style.display = 'none';
       document.querySelector('form > a').style.display = 'none';
-      document.querySelector('form > p').innerHTML = "You've already logged in";
+      document.querySelector('form > p').innerHTML = "You've already logged in as: "+sessionStorage.username;
     }
 		document.querySelector('#account-name').innerHTML = sessionStorage.username;
 		if(document.querySelector('#login_form')){

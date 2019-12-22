@@ -122,5 +122,5 @@ function successLogin() {
   }
   document.querySelector('#login_block form > button').style.display = 'none';
   document.querySelector('#login_block form > a').style.display = 'none';
-  document.querySelector('#login_block form > p').innerHTML = "You've already logged in";
+  document.querySelector('form > p').innerHTML = "You've already logged in as: "+sessionStorage.username;
 }

@@ -13,6 +13,9 @@
   elseif (strtolower($url[1]) == 'about') {
     require 'pages/about.php';
   }
+  elseif (strtolower($url[1]) == 'contact') {
+    require 'includes/contact.vcf';
+  }
   else {
     require 'pages/error.php';
   }

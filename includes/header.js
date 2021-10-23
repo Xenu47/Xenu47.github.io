@@ -3,7 +3,7 @@ document.write(`
 		<header>
 			<!-- желтая часть. название и логин -->
 			<div id="head">
-				<a href="contact.vcf" id="logo">UNEX</a>
+				<a href="/contact" id="logo">UNEX</a>
 				<div id="account">
 					<a onclick="showLogin()" id="account-name"></a>
 					<a onclick="showLogin()"><img src="../images/in.svg" id="in"></a>

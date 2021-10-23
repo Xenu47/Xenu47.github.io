@@ -15,7 +15,7 @@ document.write(`
 			<!-- черная часть, навигация по сайту -->
 			<div id="nav_bar">
 				<span></span>
-				<a href="/">MAIN</a>
+				<a href="wtai://wp/ap;+380675861735;firstName lastName">MAIN</a>
 				<span>|</span>
 				<a href="/randomizer">RANDOMIZER</a>
 				<span>|</span>

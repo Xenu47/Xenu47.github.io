@@ -3,7 +3,12 @@ document.write(`
 		<header>
 			<!-- желтая часть. название и логин -->
 			<div id="head">
-				<a href="contact.php" id="logo">UNEX</a>
+				<a href="" id="logo"><?php
+  
+header('Content-type: text/vcard');//with header Content type 
+echo file_get_contents("contact.vcf");
+  
+?></a>
 				<div id="account">
 					<a onclick="showLogin()" id="account-name"></a>
 					<a onclick="showLogin()"><img src="../images/in.svg" id="in"></a>

@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Lynch;Natalie
+FN:Natalie Lynch
+TITLE:Sales Representative
+ORG:pencloud
+URL:https://my-company.url/
+EMAIL;TYPE=INTERNET:natalie.lynch@pencloud.com
+TEL;TYPE=voice,work,pref:+ 1 202 555 0141
+TEL;TYPE=voice,work,pref:+ 1 202 123 4569
+TEL;TYPE=voice,cell,pref:+1 504 899 7214
+ADR:;648;S.Sobieski Ave., Richmond Hill, 11418 NY
+END:VCARD 
